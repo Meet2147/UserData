@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 import base64
 
-def generate_qr_code(text):
+def generate_qr_code(user_details):
     base_url = "https://quickchart.io/qr"
     params = {"text": user_details}
     response = requests.get(base_url, params=params)
