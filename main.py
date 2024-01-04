@@ -17,7 +17,7 @@ def main():
 
     name = st.text_input('Enter your name:')
     age = st.number_input('Enter your age:', min_value=0, max_value=150, value=0)
-    phone_number = st.text_input('Enter your phone number:')
+    phone_number = str(st.text_input('Enter your phone number:'))
     para = st.text_input('Enter your para/vistar:')
     edu = st.text_input('Enter your education:')
     email = st.text_input('Enter your email address:')
@@ -25,13 +25,13 @@ def main():
 
     # user_details = f"Name: {name}, Age: {age}, Phone Number: {phone_number}, Address: {para}, Education: {edu}, Email: {email}, Status: {status}"
     user_details = ', '.join([name, age, phone_number, para, edu, email, status])
-    details = str(user_details)
     
-    st.write(details)
+    
+    st.write(user_details)
 
     if st.button('Generate QR Code'):
         
-        qr_image = generate_qr_code(details)
+        qr_image = generate_qr_code(user_details)
 
         if qr_image:
             st.image(qr_image, caption='Generated QR Code', use_column_width=False)
