@@ -17,7 +17,7 @@ def main():
 
     name = st.text_input('Enter your name:')
     age = str(st.number_input('Enter your age:', min_value=0, max_value=150, value=0))
-    phone_number = str(st.text_input('Enter your phone number:'))
+    phone_number = st.text_input('Enter your phone number:')
     para = st.text_input('Enter your para/vistar:')
     edu = st.text_input('Enter your education:')
     email = st.text_input('Enter your email address:')
