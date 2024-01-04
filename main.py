@@ -25,13 +25,17 @@ def main():
 
     # user_details = f"Name: {name}, Age: {age}, Phone Number: {phone_number}, Address: {para}, Education: {edu}, Email: {email}, Status: {status}"
     user_details = ', '.join([name, age, phone_number, para, edu, email, status])
-    details = user_details
     
-    st.write(details)
+    # Encode the user_details string for use in a URL
+    encoded_details = urllib.parse.quote(user_details)
+
+    
+    
+    st.write(encoded_details)
 
     if st.button('Generate QR Code'):
         
-        qr_image = generate_qr_code(details)
+        qr_image = generate_qr_code(encoded_details)
 
         if qr_image:
             st.image(qr_image, caption='Generated QR Code', use_column_width=False)
