@@ -24,7 +24,7 @@ def main():
     status = st.selectbox('Are you a student or Professional?',('Student', 'Professional'))
 
     # user_details = f"Name: {name}, Age: {age}, Phone Number: {phone_number}, Address: {para}, Education: {edu}, Email: {email}, Status: {status}"
-    user_details = name+", "+age+", "+phone_number+", "+para+", "+edu+", "+email+", "status
+    user_details = name+", "+age+", "+phone_number+", "+para+", "+edu+", "+email+", "+status
     
     st.write(user_details)
 
