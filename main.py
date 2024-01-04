@@ -25,13 +25,13 @@ def main():
 
     # user_details = f"Name: {name}, Age: {age}, Phone Number: {phone_number}, Address: {para}, Education: {edu}, Email: {email}, Status: {status}"
     user_details = ', '.join([name, age, phone_number, para, edu, email, status])
+    details = user_details
     
-    
-    st.write(user_details)
+    st.write(details)
 
     if st.button('Generate QR Code'):
         
-        qr_image = generate_qr_code(user_details)
+        qr_image = generate_qr_code(details)
 
         if qr_image:
             st.image(qr_image, caption='Generated QR Code', use_column_width=False)
