@@ -19,10 +19,11 @@ def main():
     age = st.number_input('Enter your age:', min_value=0, max_value=150, value=0)
     phone_number = st.text_input('Enter your phone number:')
     address = st.text_area('Enter your address:')
-    dob = st.date_input('Enter your date of birth:')
+    edu = st.date_input('Enter your education:')
     email = st.text_input('Enter your email address:')
+    status = st.selectbox('Are you a student or Professional?',('Student', 'Professional'))
 
-    user_details = f"Name: {name}, Age: {age}, Phone Number: {phone_number}, Address: {address}, Date of Birth: {dob}, Email: {email}"
+    user_details = f"Name: {name}, Age: {age}, Phone Number: {phone_number}, Address: {address}, Education: {edu}, Email: {email}, Status: {status}"
 
     if st.button('Generate QR Code'):
         qr_image = generate_qr_code(user_details)
