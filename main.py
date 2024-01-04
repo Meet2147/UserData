@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 import base64
+import urllib.parse
 
 def generate_qr_code(encoded_details):
     base_url = "https://quickchart.io/qr"
