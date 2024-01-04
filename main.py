@@ -2,15 +2,15 @@ import streamlit as st
 import requests
 import base64
 
-# def generate_qr_code(text):
-#     base_url = "https://quickchart.io/qr"
-#     params = {"text": text}
-#     response = requests.get(base_url, params=params)
+def generate_qr_code(text):
+    base_url = "https://quickchart.io/qr"
+    params = {"text": user_details}
+    response = requests.get(base_url, params=params)
 
-#     if response.status_code == 200:
-#         return response.content
+    if response.status_code == 200:
+        return response.content
 
-#     return None
+    return None
 
 def main():
     st.title('User Details QR Code Generator')
@@ -28,11 +28,8 @@ def main():
     st.write(user_details)
 
     if st.button('Generate QR Code'):
-        base_url = "https://quickchart.io/qr?"
-        # text = user_details
-        params = {"text": user_details}
-        response = requests.get(base_url, params=user_details)
-        qr_image = response.content
+        
+        qr_image = generate_qr_code(user_details)
 
         if qr_image:
             st.image(qr_image, caption='Generated QR Code', use_column_width=False)
