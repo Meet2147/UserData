@@ -19,7 +19,7 @@ def main():
     age = st.number_input('Enter your age:', min_value=0, max_value=150, value=0)
     phone_number = st.text_input('Enter your phone number:')
     para = st.text_input('Enter your para/vistar:')
-    edu = st.date_input('Enter your education:')
+    edu = st.text_input('Enter your education:')
     email = st.text_input('Enter your email address:')
     status = st.selectbox('Are you a student or Professional?',('Student', 'Professional'))
 
@@ -29,8 +29,9 @@ def main():
 
     if st.button('Generate QR Code'):
         base_url = "https://quickchart.io/qr?"
-        text = user_details
-        response = requests.get(base_url, params=text)
+        # text = user_details
+        params = {"text": user_details}
+        response = requests.get(base_url, params=user_details)
         qr_image = response.content
 
         if qr_image:
