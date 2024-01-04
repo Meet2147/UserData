@@ -28,7 +28,10 @@ def main():
     st.write(user_details)
 
     if st.button('Generate QR Code'):
-        qr_image = https://quickchart.io/qr?text=user_details
+        base_url = "https://quickchart.io/qr?"
+        text = user_details
+        response = requests.get(base_url, params=text)
+        qr_image = response.content
 
         if qr_image:
             st.image(qr_image, caption='Generated QR Code', use_column_width=False)
