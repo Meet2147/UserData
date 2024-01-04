@@ -23,7 +23,7 @@ def main():
     email = st.text_input('Enter your email address:')
     status = st.selectbox('Are you a student or Professional?',('Student', 'Professional'))
 
-    user_details = f"Name: {name}, Age: {age}, Phone Number: {phone_number}, Address: {address}, Education: {edu}, Email: {email}, Status: {status}"
+    user_details = f"Name: {name}, Age: {age}, Phone Number: {phone_number}, Address: {para}, Education: {edu}, Email: {email}, Status: {status}"
 
     if st.button('Generate QR Code'):
         qr_image = generate_qr_code(user_details)
