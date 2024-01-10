@@ -16,7 +16,7 @@ def main():
     st.title('User Details QR Code Generator')
 
     name = st.text_input('Enter your name:')
-    age = str(st.number_input('Enter your age:', min_value=0, max_value=150, value=0))
+    age = str(st.date_input('Enter your age:'))
     phone_number = st.text_input('Enter your phone number:')
     para = st.text_input('Enter your para/vistar:')
     edu = st.text_input('Enter your education:')
